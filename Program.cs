@@ -222,34 +222,76 @@
 //}
 
 // 8. WAP to print Fibonacci series without recursion.
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Console.WriteLine("Enter the number to get the fibonacci series : ");
+//            int n = Convert.ToInt32(Console.ReadLine());
+//            int a = 0;
+//            int b = 1;
+//            int c = 0;
+//            if (n >= 1)
+//            {
+//                Console.WriteLine(a); // Print the first number (0)
+//            }
+//            if (n >= 2)
+//            {
+//                Console.WriteLine(b); // Print the second number (1)
+//            }
+//            for (int i = 2; i < n; i++)
+//            {
+//                c = a + b;
+//                Console.WriteLine(c + " ");
+
+//                a = b;
+//                b = c;
+//            }
+//        }
+//    }
+//}
+
+// 11. Find prime numbers from 1 ....n
 using System;
+using System.Linq;
+using System.Collections.Generic;
 namespace logicals
 {
     class Program
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter the number to get the fibonacci series : ");
+            Console.WriteLine("Enter the number to get the Prime Numbers : ");
             int n = Convert.ToInt32(Console.ReadLine());
-            int a = 0;
-            int b = 1;
-            int c = 0;
-            if (n >= 1)
-            {
-                Console.WriteLine(a); // Print the first number (0)
-            }
-            if (n >= 2)
-            {
-                Console.WriteLine(b); // Print the second number (1)
-            }
+            var list = new List<int>();
             for (int i = 2; i < n; i++)
             {
-                c = a + b;
-                Console.WriteLine(c + " ");
-
-                a = b;
-                b = c;
+                if (isPrime(i))
+                {
+                    list.Add(i);
+                }
             }
+            foreach (var i in list)
+            {
+                Console.WriteLine(i);
+            }
+        }
+        public static bool isPrime(int n)
+        {
+            if (n < 2) return false;
+            if (n == 2) return true;
+            if (n % 2 == 0) return false;
+            for (int i = 3; i * i < n; i += 2)
+            {
+                if (n % i == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
