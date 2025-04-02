@@ -73,42 +73,62 @@
 
 
 // 3. Logic for anagram program with its time complexity. (for large strings).
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            string str1 = "listen";
+//            string str2 = "silemt";
+
+//            if (isAnagram(str1, str2))
+//            {
+//                Console.WriteLine("Anagram");
+//            }
+//            else
+//            {
+//                Console.WriteLine("Not Anagram");
+//            }
+//        }
+
+//        public static bool isAnagram(string str1, string str2)
+//        {
+//            int[] array = new int[256];
+//            for (int i = 0; i < str1.Length; i++)
+//            {
+//                array[str1[i]]++;
+//                array[str2[i]]--;
+//            }
+//            foreach (var i in array)
+//            {
+//                if (i != 0)
+//                {
+//                    return false;
+//                }
+//            }
+//            return true;
+//        }
+//    }
+//}
+
+// 4. Find the reverse of the string.
 using System;
+using System.Collections.Generic;
 namespace logicals
 {
     class Program
     {
         public static void Main(string[] args)
         {
-            string str1 = "listen";
-            string str2 = "silemt";
-
-            if (isAnagram(str1, str2))
+            string str = "Akshay";
+            var reversed = "";
+            for (int i = str.Length - 1; i >= 0; i--)
             {
-                Console.WriteLine("Anagram");
+                reversed += str[i];
             }
-            else
-            {
-                Console.WriteLine("Not Anagram");
-            }
-        }
-
-        public static bool isAnagram(string str1, string str2)
-        {
-            int[] array = new int[256];
-            for (int i = 0; i < str1.Length; i++)
-            {
-                array[str1[i]]++;
-                array[str2[i]]--;
-            }
-            foreach (var i in array)
-            {
-                if (i != 0)
-                {
-                    return false;
-                }
-            }
-            return true;
+            Console.WriteLine(reversed);
         }
     }
 }
