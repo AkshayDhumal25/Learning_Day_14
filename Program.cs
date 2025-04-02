@@ -318,26 +318,51 @@
 // Logic for above problem?
 // What will be the complexity for it?
 // Any better solution for the above problem?
+//using System;
+//using System.Collections.Generic;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            int[] array = { 80, 60, 10, 50, 30, 100, 0, 50 };
+//            int targetSum = 100;
+
+//            var list = new List<int>(array);
+//            for (int i = 0; i < array.Length; i++)
+//            {
+//                int complement = targetSum - array[i];
+//                if (list.Contains(complement))
+//                {
+//                    Console.WriteLine($"{complement}  and {array[i]}");
+//                }
+//            }
+//        }
+//    }
+//}
+
+//Generics
 using System;
-using System.Collections.Generic;
 namespace logicals
 {
     class Program
     {
         public static void Main(string[] args)
         {
-            int[] array = { 80, 60, 10, 50, 30, 100, 0, 50 };
-            int targetSum = 100;
+            Console.WriteLine("Enter the 1st element: ");
+            var a = Console.ReadLine();
+            Console.WriteLine("Enter the 2nd element: ");
+            var b = Console.ReadLine();
+            swap(ref a, ref b);
+            Console.WriteLine($"A: {a} and B: {b}");
+        }
 
-            var list = new List<int>(array);
-            for (int i = 0; i < array.Length; i++)
-            {
-                int complement = targetSum - array[i];
-                if (list.Contains(complement))
-                {
-                    Console.WriteLine($"{complement}  and {array[i]}");
-                }
-            }
+        public static void swap<T>(ref T a, ref T b)
+        {
+            var temp = a;
+            a = b;
+            b = temp;
         }
     }
 }
