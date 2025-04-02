@@ -343,26 +343,48 @@
 //}
 
 //Generics
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Console.WriteLine("Enter the 1st element: ");
+//            var a = Console.ReadLine();
+//            Console.WriteLine("Enter the 2nd element: ");
+//            var b = Console.ReadLine();
+//            swap(ref a, ref b);
+//            Console.WriteLine($"A: {a} and B: {b}");
+//        }
+
+//        public static void swap<T>(ref T a, ref T b)
+//        {
+//            var temp = a;
+//            a = b;
+//            b = temp;
+//        }
+//    }
+//}
+
+// Find missing number
 using System;
+using System.Linq;
 namespace logicals
 {
     class Program
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter the 1st element: ");
-            var a = Console.ReadLine();
-            Console.WriteLine("Enter the 2nd element: ");
-            var b = Console.ReadLine();
-            swap(ref a, ref b);
-            Console.WriteLine($"A: {a} and B: {b}");
-        }
-
-        public static void swap<T>(ref T a, ref T b)
-        {
-            var temp = a;
-            a = b;
-            b = temp;
+            int[] array = { 1, 2, 3, 4, 6 };
+            int n = array.Length + 1;
+            int realSum = n * (n + 1) / 2;
+            int sum = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                sum += array[i];
+            }
+            Console.WriteLine(realSum - sum);
         }
     }
 }
