@@ -297,17 +297,47 @@
 //}
 
 // 12. WAP for getting a square root of a given number.
+//using System;
+//namespace logicals
+//{
+//    class Prime
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Console.WriteLine("Enter the number : ");
+//            double n = Convert.ToInt32(Console.ReadLine());
+//            double res = Math.Sqrt(n);
+//            Console.WriteLine(res);
+//        }
+//    }
+//}
+
+
+// 14. [80, 60, 10, 50, 30, 100, 0, 50]
+// Find pairs whose sum = 100;
+// Logic for above problem?
+// What will be the complexity for it?
+// Any better solution for the above problem?
 using System;
+using System.Collections.Generic;
 namespace logicals
 {
-    class Prime
+    class Program
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter the number : ");
-            double n = Convert.ToInt32(Console.ReadLine());
-            double res = Math.Sqrt(n);
-            Console.WriteLine(res);
+            int[] array = { 80, 60, 10, 50, 30, 100, 0, 50 };
+            int targetSum = 100;
+
+            var list = new List<int>(array);
+            for (int i = 0; i < array.Length; i++)
+            {
+                int complement = targetSum - array[i];
+                if (list.Contains(complement))
+                {
+                    Console.WriteLine($"{complement}  and {array[i]}");
+                }
+            }
         }
     }
 }
